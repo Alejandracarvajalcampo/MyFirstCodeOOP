@@ -20,7 +20,8 @@ namespace MyFirstCodeOOP
         }
         public override string ToString()
         {
-            return;
+            return $"{base.ToString()}\n\t " +
+                $"value to pay: {GetValueToPay()}";
              
         }
 

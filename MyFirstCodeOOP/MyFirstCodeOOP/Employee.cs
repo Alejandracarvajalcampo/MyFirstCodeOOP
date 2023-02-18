@@ -26,12 +26,12 @@ namespace MyFirstCodeOOP
         public override string ToString()
         {
             return string.Format($"---EMPLOYEE---\n\t" +
-                $" ID:{0}" +
-                $" \n\t FirstName:{1} " +
-                $"\n\t LastName:{2} " +
-                $"\n\t BirthDate:{3} " +
-                $"\n\t HiringDate:{4}" +
-                $"\n\t IsActive:{5}"
+                " Id:{0}\n\t" +
+                " FirstName:{1} \n\t" +
+                " LastName:{2} \n\t" +
+                " BirthDate:{3} \n\t" +
+                " HiringDate:{4} \n\t " +
+                "IsActive:{5}",
                 Id,
                FirstName,
                LastName,

@@ -4,12 +4,12 @@ using System.Text;
 
 namespace MyFirtsCodeOPP
 {
-    internal class Date
+    public class Date
     {
         #region Fields 
-        int _year;
-        int _month;
-        int _day;
+        public int _year;
+        public int _month;
+        public int _day;
 
 
         #endregion
@@ -19,7 +19,7 @@ namespace MyFirtsCodeOPP
 
         public Date(int year, int month, int day)
         {
-            this._year = validateYear(year);
+            this._year = ValidateYear(year);
             this._month = ValidateMonth(month);
             this._day = ValidateDay(day, month);
 
@@ -69,7 +69,7 @@ namespace MyFirtsCodeOPP
             }
             throw new MonthException(" the month is invalid");
         }
-        private int validateYear(int year)
+        private int ValidateYear(int year)
         {
             if (year > 1900)
             {
