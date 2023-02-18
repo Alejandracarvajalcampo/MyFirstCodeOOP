@@ -6,7 +6,7 @@ namespace MyFirtsCodeOPP
 {
     internal class Date
     {
-        #region Properties 
+        #region Fields 
         int _year;
         int _month;
         int _day;
