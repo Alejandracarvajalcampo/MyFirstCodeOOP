@@ -23,20 +23,75 @@ namespace MyFirtsCodeOPP
                 Console.WriteLine(dateObject);
 
 
-                Console.WriteLine("******Testing latest implementation******");
+                Console.WriteLine("************************");
+                Console.WriteLine("**** SALARY EMPLOYEE ****");
+                Console.WriteLine("**************************");
+
+                Console.WriteLine(" Type your Id");
+                int id = Convert.ToInt32(Console.ReadLine());
+
+                Console.WriteLine(" Type your first name ");
+                String firstName  = (Console.ReadLine());
+
+                Console.WriteLine(" Type your last name ");
+                String lastName = (Console.ReadLine());
+
+                Console.WriteLine(" Type your active");
+                bool isActive = Convert.ToBoolean(Console.ReadLine());
+
+                Console.WriteLine(" Type your salary");
+                decimal salary = Convert.ToDecimal(Console.ReadLine());
+
 
                 Employee salaryEmployee = new SalaryEmployee()
 
                 {
-                    Id = 1000,
-                    FirstName = "Maria",
-                    LastName = "Posada",
-                    BirthDate = new Date( 19950,2,5),
-                    HiringDate = new Date (2022,12,31),
-                    IsActive = true,
-                    Salary = 200000.34M
+                    Id = id,
+                    FirstName = firstName,
+                    LastName = lastName,
+                    BirthDate = new Date(Convert.ToInt32(year),Convert.ToInt32(month),Convert.ToInt32(day)),
+                    HiringDate = new Date (2022,3,4),
+                    IsActive = isActive,
+                    Salary = salary
                 };
                 Console.WriteLine(salaryEmployee);
+                Console.WriteLine();
+
+
+                Console.WriteLine("************************");
+                Console.WriteLine("**** SALARY EMPLOYEE ****");
+                Console.WriteLine("**************************");
+
+                Console.WriteLine(" Type your Id");
+                 id = Convert.ToInt32(Console.ReadLine());
+
+                Console.WriteLine(" Type your first name ");
+                 firstName = (Console.ReadLine());
+
+                Console.WriteLine(" Type your last name ");
+                 lastName = (Console.ReadLine());
+
+                Console.WriteLine(" Enter your commission percentage:");
+                 float commisionpercentage = Convert.ToSingle(Console.ReadLine());
+
+                Console.WriteLine(" Enter your sales:");
+                decimal sales = Convert.ToDecimal(Console.ReadLine());
+
+                Employee commissionEmploye = new commissionEmployee()
+
+                {
+                    Id = id,
+                    FirstName = firstName,
+                    LastName = lastName,
+                    BirthDate = new Date(Convert.ToInt32(year), Convert.ToInt32(month), Convert.ToInt32(day)),
+                    HiringDate = new Date(2022, 3, 4),
+                    IsActive = isActive,
+                    CommissionPercentage = commisionpercentage,
+                    Sales = salary
+                };
+                Console.WriteLine(commissionEmploye);
+
+
 
             }
 

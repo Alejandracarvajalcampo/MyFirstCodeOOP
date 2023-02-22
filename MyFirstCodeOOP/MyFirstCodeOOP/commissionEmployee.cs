@@ -8,7 +8,7 @@ namespace MyFirstCodeOOP
     {
         #region Properties
 
-        public float CommissionPorcentage { get; set; } 
+        public float CommissionPercentage { get; set; } 
         public decimal Sales { get; set; }  
 
         #endregion
@@ -16,14 +16,24 @@ namespace MyFirstCodeOOP
         #region Mtehosd
         public override decimal GetValueToPay()
         {
-            return Sales * (decimal) CommissionPorcentage;  
+            return Sales * (decimal) ConvertPercentage(CommissionPercentage) ;  
         }
 
         public override string ToString()
         {
-            return $"{base.ToString()};\n\tCommssion Percentage....{CommissionPorcentage}:P2
+            return $"{base.ToString()};" +
+                $"\n\tCommssion Percentage....{ConvertPercentage(CommissionPercentage):P2}" +
+                $"\n\t Sales..................{Sales:C2}" +
+                $"\n\t Value to pay...........{GetValueToPay():C2}";
         }
+        public float ConvertPercentage(float commissionPercenatge)
+        {
+            return (commissionPercenatge / 100);                
+        }
+
+        #endregion
     }
-    #endregion
 }
+    
+
 
