@@ -59,7 +59,7 @@ namespace MyFirtsCodeOPP
 
 
                 Console.WriteLine("************************");
-                Console.WriteLine("**** SALARY EMPLOYEE ****");
+                Console.WriteLine("**** COMMISSION EMPLOYEE ****");
                 Console.WriteLine("**************************");
 
                 Console.WriteLine(" Type your Id");
@@ -70,6 +70,9 @@ namespace MyFirtsCodeOPP
 
                 Console.WriteLine(" Type your last name ");
                  lastName = (Console.ReadLine());
+
+                Console.WriteLine(" Type your active");
+                 isActive = Convert.ToBoolean(Console.ReadLine());
 
                 Console.WriteLine(" Enter your commission percentage:");
                  float commisionpercentage = Convert.ToSingle(Console.ReadLine());
@@ -90,6 +93,77 @@ namespace MyFirtsCodeOPP
                     Sales = salary
                 };
                 Console.WriteLine(commissionEmploye);
+                Console.WriteLine();
+
+                Console.WriteLine("************************");
+                Console.WriteLine("**** CONTRACTOR EMPLOYEE ****");
+                Console.WriteLine("**************************");
+
+                Console.WriteLine(" Type your Id");
+                id = Convert.ToInt32(Console.ReadLine());
+
+                Console.WriteLine(" Type your first name ");
+                firstName = (Console.ReadLine());
+
+                Console.WriteLine(" Type your last name ");
+                lastName = (Console.ReadLine());
+
+                Console.WriteLine(" Type your active");
+                 isActive = Convert.ToBoolean(Console.ReadLine());
+
+                Console.WriteLine(" Enter your number of hours:");
+                float hours = Convert.ToSingle(Console.ReadLine());
+
+                Console.WriteLine(" Enter your svalue per hour:");
+                decimal hoursValue = Convert.ToDecimal(Console.ReadLine());
+
+                Employee contractorEmployee = new ContractorEmployee()
+
+                {
+                    Id = id,
+                    FirstName = firstName,
+                    LastName = lastName,
+                    BirthDate = new Date(Convert.ToInt32(year), Convert.ToInt32(month), Convert.ToInt32(day)),
+                    HiringDate = new Date(2022, 3, 4),
+                    IsActive = isActive,
+                    Hours = hours,
+                    HourValue = hoursValue
+                };
+                Console.WriteLine(contractorEmployee);
+                Console.WriteLine();
+
+                Console.WriteLine("*************************************");
+                Console.WriteLine("**** BASE & COMMISSION EMPLOYEE ****");
+                Console.WriteLine("**************************");
+
+                Console.WriteLine(" Type your Id");
+                id = Convert.ToInt32(Console.ReadLine());
+
+                Console.WriteLine(" Type your first name ");
+                firstName = (Console.ReadLine());
+
+                Console.WriteLine(" Type your last name ");
+                lastName = (Console.ReadLine());
+
+                Console.WriteLine(" Type your active");
+                isActive = Convert.ToBoolean(Console.ReadLine());
+
+                Console.WriteLine(" Enter your svalue per hour:");
+                decimal salaryBase = Convert.ToDecimal(Console.ReadLine());
+
+                Employee baseCommissionEmploye = new BaseCommissionEmployee()
+
+                {
+                    Id = id,
+                    FirstName = firstName,
+                    LastName = lastName,
+                    BirthDate = new Date(Convert.ToInt32(year), Convert.ToInt32(month), Convert.ToInt32(day)),
+                    HiringDate = new Date(2022, 3, 4),
+                    IsActive = isActive,
+                    Base = salaryBase,
+                    
+                };
+                Console.WriteLine(baseCommissionEmploye);
 
 
 
