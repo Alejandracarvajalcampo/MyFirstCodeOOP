@@ -1,4 +1,5 @@
 ﻿using MyFirstCodeOOP;
+using MyFirstCodeOOP.Helper;
 using System;
 using System.Collections.Generic;
 
@@ -31,7 +32,7 @@ namespace MyFirtsCodeOPP
                 int id = Convert.ToInt32(Console.ReadLine());
 
                 Console.WriteLine(" Type your first name ");
-                String firstName  = (Console.ReadLine());
+                String firstName = (Console.ReadLine());
 
                 Console.WriteLine(" Type your last name ");
                 String lastName = (Console.ReadLine());
@@ -49,12 +50,12 @@ namespace MyFirtsCodeOPP
                     Id = id,
                     FirstName = firstName,
                     LastName = lastName,
-                    BirthDate = new Date(Convert.ToInt32(year),Convert.ToInt32(month),Convert.ToInt32(day)),
-                    HiringDate = new Date (2022,3,4),
+                    BirthDate = new Date(Convert.ToInt32(year), Convert.ToInt32(month), Convert.ToInt32(day)),
+                    HiringDate = new Date(2022, 3, 4),
                     IsActive = isActive,
                     Salary = salary
                 };
-                Console.WriteLine(salaryEmployee);
+                //Console.WriteLine(salaryEmployee);
                 Console.WriteLine();
 
 
@@ -63,19 +64,19 @@ namespace MyFirtsCodeOPP
                 Console.WriteLine("**************************");
 
                 Console.WriteLine(" Type your Id");
-                 id = Convert.ToInt32(Console.ReadLine());
+                id = Convert.ToInt32(Console.ReadLine());
 
                 Console.WriteLine(" Type your first name ");
-                 firstName = (Console.ReadLine());
+                firstName = (Console.ReadLine());
 
                 Console.WriteLine(" Type your last name ");
-                 lastName = (Console.ReadLine());
+                lastName = (Console.ReadLine());
 
                 Console.WriteLine(" Type your active");
-                 isActive = Convert.ToBoolean(Console.ReadLine());
+                isActive = Convert.ToBoolean(Console.ReadLine());
 
                 Console.WriteLine(" Enter your commission percentage:");
-                 float commisionpercentage = Convert.ToSingle(Console.ReadLine());
+                float commisionpercentage = Convert.ToSingle(Console.ReadLine());
 
                 Console.WriteLine(" Enter your sales:");
                 decimal sales = Convert.ToDecimal(Console.ReadLine());
@@ -92,7 +93,7 @@ namespace MyFirtsCodeOPP
                     CommissionPercentage = commisionpercentage,
                     Sales = salary
                 };
-                Console.WriteLine(commissionEmploye);
+                //Console.WriteLine(commissionEmploye);
                 Console.WriteLine();
 
                 Console.WriteLine("************************");
@@ -109,7 +110,7 @@ namespace MyFirtsCodeOPP
                 lastName = (Console.ReadLine());
 
                 Console.WriteLine(" Type your active");
-                 isActive = Convert.ToBoolean(Console.ReadLine());
+                isActive = Convert.ToBoolean(Console.ReadLine());
 
                 Console.WriteLine(" Enter your number of hours:");
                 float hours = Convert.ToSingle(Console.ReadLine());
@@ -129,7 +130,7 @@ namespace MyFirtsCodeOPP
                     Hours = hours,
                     HourValue = hoursValue
                 };
-                Console.WriteLine(contractorEmployee);
+                //Console.WriteLine(contractorEmployee);
                 Console.WriteLine();
 
                 Console.WriteLine("*************************************");
@@ -149,10 +150,10 @@ namespace MyFirtsCodeOPP
                 isActive = Convert.ToBoolean(Console.ReadLine());
 
                 Console.WriteLine(" Enter your commission percentage:");
-                 commisionpercentage = Convert.ToSingle(Console.ReadLine());
+                commisionpercentage = Convert.ToSingle(Console.ReadLine());
 
                 Console.WriteLine(" Enter your sales:");
-                 sales = Convert.ToDecimal(Console.ReadLine());
+                sales = Convert.ToDecimal(Console.ReadLine());
 
                 Console.WriteLine(" Enter your svalue per hour:");
                 decimal salaryBase = Convert.ToDecimal(Console.ReadLine());
@@ -169,31 +170,16 @@ namespace MyFirtsCodeOPP
                     CommissionPercentage = commisionpercentage,
                     Sales = sales,
                     Base = salaryBase,
-                    
+
                 };
-                Console.WriteLine(baseCommissionEmploye);
+                //Console.WriteLine(baseCommissionEmploye);
 
-                ICollection<Employee> employes = new List<Employee>()
-                {
-                    salaryEmployee,
-                    commissionEmploye,
-                    contractorEmployee,
-                    baseCommissionEmploye
-                };
+                EmployeeHelper employeeHelper = new EmployeeHelper(salaryEmployee,commissionEmploye,contractorEmployee,baseCommissionEmploye);
 
-                decimal payrrol = 0;
-
-                foreach(Employee employee in employes)
-                {
-                    if (employee.IsActive)
-                    {
-                        Console.WriteLine(employee);
-                        Console.WriteLine("");
-                        payrrol += employee.GetValueToPay();
-                    }
-                 
-
-                }
+                
+                    Console.WriteLine($"total payrrol:..........{employeeHelper.GetPayrollFromActiveEmployees():C2}");
+                
+      
 
             }
 

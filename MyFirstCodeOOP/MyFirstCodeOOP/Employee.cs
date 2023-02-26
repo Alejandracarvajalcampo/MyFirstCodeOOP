@@ -22,6 +22,48 @@ namespace MyFirstCodeOOP
 
         public abstract decimal GetValueToPay();
 
+        public string BuildEmployee()
+        {
+            Console.Write("Please put your year: ");
+            int year = int.Parse(Console.ReadLine());
+
+            Console.Write("Please put your month:");
+            int month = int.Parse(Console.ReadLine());
+
+            Console.Write("Please put your day: ");
+            int day = int.Parse(Console.ReadLine());
+
+            var dateObject = new Date(year, month, day);
+            Console.WriteLine(dateObject);
+
+
+            Console.WriteLine(" Type your Id");
+            int id = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine(" Type your first name ");
+            String firstName = (Console.ReadLine());
+
+            Console.WriteLine(" Type your last name ");
+            String lastName = (Console.ReadLine());
+
+            Console.WriteLine(" Type your active");
+            bool isActive = Convert.ToBoolean(Console.ReadLine());
+
+            return string.Format($"---EMPLOYEE---\n\t" +
+            " Id:{0}\n\t" +
+            " FirstName:{1} \n\t" +
+            " LastName:{2} \n\t" +
+            " BirthDate:{3} \n\t" +
+            " HiringDate:{4} \n\t " +
+            "IsActive:{5}",
+            Id,
+           FirstName,
+           LastName,
+           BirthDate,
+           HiringDate,
+           IsActive);
+
+        }
 
         public override string ToString()
         {
