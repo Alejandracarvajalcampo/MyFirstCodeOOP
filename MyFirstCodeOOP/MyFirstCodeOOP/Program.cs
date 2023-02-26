@@ -1,6 +1,6 @@
 ﻿using MyFirstCodeOOP;
 using System;
-
+using System.Collections.Generic;
 
 namespace MyFirtsCodeOPP
 {
@@ -148,6 +148,12 @@ namespace MyFirtsCodeOPP
                 Console.WriteLine(" Type your active");
                 isActive = Convert.ToBoolean(Console.ReadLine());
 
+                Console.WriteLine(" Enter your commission percentage:");
+                 commisionpercentage = Convert.ToSingle(Console.ReadLine());
+
+                Console.WriteLine(" Enter your sales:");
+                 sales = Convert.ToDecimal(Console.ReadLine());
+
                 Console.WriteLine(" Enter your svalue per hour:");
                 decimal salaryBase = Convert.ToDecimal(Console.ReadLine());
 
@@ -160,12 +166,34 @@ namespace MyFirtsCodeOPP
                     BirthDate = new Date(Convert.ToInt32(year), Convert.ToInt32(month), Convert.ToInt32(day)),
                     HiringDate = new Date(2022, 3, 4),
                     IsActive = isActive,
+                    CommissionPercentage = commisionpercentage,
+                    Sales = sales,
                     Base = salaryBase,
                     
                 };
                 Console.WriteLine(baseCommissionEmploye);
 
+                ICollection<Employee> employes = new List<Employee>()
+                {
+                    salaryEmployee,
+                    commissionEmploye,
+                    contractorEmployee,
+                    baseCommissionEmploye
+                };
 
+                decimal payrrol = 0;
+
+                foreach(Employee employee in employes)
+                {
+                    if (employee.IsActive)
+                    {
+                        Console.WriteLine(employee);
+                        Console.WriteLine("");
+                        payrrol += employee.GetValueToPay();
+                    }
+                 
+
+                }
 
             }
 
