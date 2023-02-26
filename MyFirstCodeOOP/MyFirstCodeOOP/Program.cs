@@ -174,15 +174,30 @@ namespace MyFirtsCodeOPP
                 };
                 //Console.WriteLine(baseCommissionEmploye);
 
-                EmployeeHelper employeeHelper = new EmployeeHelper(salaryEmployee,commissionEmploye,contractorEmployee,baseCommissionEmploye);
+                EmployeeHelper employeeHelper = new EmployeeHelper(salaryEmployee, commissionEmploye, contractorEmployee, baseCommissionEmploye);
 
-                
-                    Console.WriteLine($"total payrrol:..........{employeeHelper.GetPayrollFromActiveEmployees():C2}");
-                
-      
+
+                Console.WriteLine($"total payrrol:..........{employeeHelper.GetPayrollFromActiveEmployees():C2}");
+
+
+                Console.WriteLine("*****************");
+                Console.WriteLine("**** INVOICE ****");
+                Console.WriteLine("******************");
+
+                Invoice invoice = new Invoice()
+                {
+                    Id = 201205,
+                    Description = "iphone 13",
+                    Price = 4500000,
+                    Quantity = 2,
+
+
+
+                };
+
+                Console.WriteLine(invoice);
 
             }
-
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
